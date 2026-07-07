@@ -50,3 +50,7 @@ alembic/versions/__pycache__/
 # Docker
 .docker/
 docker-compose.override.yml
+
+# Firebase
+.firebase/
+firebase-debug.log*

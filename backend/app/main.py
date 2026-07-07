@@ -11,7 +11,7 @@ app = FastAPI(
 # Set all CORS enabled origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Update in production
+    allow_origins=["https://aeris-app-ui.web.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

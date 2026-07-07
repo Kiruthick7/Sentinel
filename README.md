@@ -9,6 +9,10 @@
     <a href="#ai-pipeline">AI Pipeline</a> • 
     <a href="#tech-stack">Tech Stack</a>
   </p>
+  <p>
+    <strong>🚀 Live Frontend (Firebase):</strong> <a href="https://aeris-app-ui.web.app">aeris-app-ui.web.app</a><br/>
+    <strong>⚙️ Live API Backend (Cloud Run):</strong> <a href="https://aeris-backend-106045278694.us-central1.run.app/docs">aeris-backend...run.app/docs</a>
+  </p>
 </div>
 
 ---
@@ -117,8 +121,10 @@ flowchart TD
 - **External APIs:** NASA FIRMS API (Simulated/Live Fire Data), WAQI API (World Air Quality Index)
 
 ### DevOps & Deployment
-- **Containerization:** Docker (Optional for local testing of V2 Microservices)
-- **Hosting Target:** Vercel (Optimized for Next.js Serverless MVP)
+- **Database:** Neon (Serverless PostgreSQL) + PostGIS
+- **Frontend Hosting:** Firebase Hosting (Next.js Web Frameworks)
+- **Backend Hosting:** Google Cloud Run
+- **Containerization:** Docker (Backend API)
 
 ---
 
