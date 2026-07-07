@@ -17,12 +17,14 @@
 
 ---
 
+<a name="problem"></a>
 ## 🌪️ The Problem
 
 Every year, municipalities lose millions of dollars and compromise the health of hundreds of thousands of citizens due to delayed responses to localized environmental incidents (e.g., illegal industrial dumping, hazardous fires, chemical spills).
 
 Traditional city dashboards are **reactive, fragmented, and passive**. They show raw data on a map, but they don't tell command center officers *what to do*, *why it matters*, or *how to respond*. The cognitive load during a crisis falls entirely on understaffed dispatchers.
 
+<a name="solution"></a>
 ## 🚀 The Solution: Project AERIS
 
 Project AERIS is a proactive **Environmental Command Center**. It transforms raw citizen reports and IoT data into verifiable, actionable intelligence using an autonomous multi-agent AI architecture.
@@ -52,6 +54,7 @@ AERIS doesn't just put a pin on a map. It answers the only question that matters
 
 ---
 
+<a name="ai-pipeline"></a>
 ## 🧠 The AI Pipeline
 
 AERIS operates on a specialized multi-agent architecture to guarantee deterministic, high-confidence outputs.
@@ -64,6 +67,7 @@ AERIS operates on a specialized multi-agent architecture to guarantee determinis
 
 ---
 
+<a name="architecture"></a><a name="tech-stack"></a>
 ## 🏗️ Architecture & Tech Stack
 
 ```mermaid
