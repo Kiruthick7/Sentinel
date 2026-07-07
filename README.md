@@ -78,6 +78,7 @@ flowchart TD
     subgraph Serverless [Next.js API Routes]
         Analyze[🧠 /api/v1/analyze]:::api
         Firms[🔥 /api/v1/firms]:::api
+        Gemini((Google Gemini 2.5)):::engine
         Groq((Groq API / Llama-4)):::engine
     end
 
@@ -90,8 +91,10 @@ flowchart TD
     C -- "Uploads Image/GPS" --> Analyze
     S -- "Polls Thermal Anomalies" --> Firms
     
-    Analyze -- "Prompts" --> Groq
-    Groq -- "Returns Structured JSON & Explainability" --> Analyze
+    Analyze -- "1. Primary Inference" --> Gemini
+    Analyze -- "2. HA Fallback" --> Groq
+    Gemini -- "Returns Structured JSON & Explainability" --> Analyze
+    Groq -- "Fallback JSON & Explainability" --> Analyze
     
     Analyze --> Z
     Firms --> Z
@@ -109,12 +112,13 @@ flowchart TD
 
 ### Backend (Serverless Edge)
 - **Framework:** Next.js API Routes (Serverless)
-- **AI Integration:** Groq API (Llama-4 Scout 17B) for high-speed deterministic JSON generation and chain-of-thought extraction.
+- **AI Integration:** Google Gemini API (`gemini-2.5-flash`) for primary deterministic JSON generation and chain-of-thought extraction.
+- **AI Fallback (HA):** Groq API (`llama-4-scout-17b`) for high-availability fallback if Gemini experiences downtime.
 - **External APIs:** NASA FIRMS API (Simulated/Live Fire Data)
 
 ### DevOps & Deployment
-- **Containerization:** Docker (Optional for local testing)
-- **Hosting Target:** Vercel (Optimized for Next.js Serverless)
+- **Containerization:** Docker (Optional for local testing of V2 Microservices)
+- **Hosting Target:** Vercel (Optimized for Next.js Serverless MVP)
 
 ---
 
@@ -126,13 +130,13 @@ To launch the entire stack locally for development or judging:
 ```bash
 # Clone the repo
 git clone https://github.com/Kiruthick7/Project_AERIS.git
-cd Project_AERIS
+cd Project_AERIS/frontend
 
-# Launch Backend & Databases
-docker-compose up -d
+# Setup Environment
+cp ../.env.example .env.local
+# (Fill in your GEMINI_API_KEY in .env.local)
 
-# Launch Frontend Command Center
-cd frontend
+# Install & Launch
 npm install
 npm run dev
 ```

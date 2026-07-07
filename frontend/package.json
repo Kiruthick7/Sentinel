@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@google/genai": "^2.10.0",
     "city-reverse-geocoder": "^0.0.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.4.0",
